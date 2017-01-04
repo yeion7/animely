@@ -1,12 +1,13 @@
 import React from 'react';
 
+import Search from '../components/Search/Search';
+
 function Home() {
   return (
     <section name="Home">
-      <h1>Home</h1>
+      <Search />
     </section>
   );
 }
-
 
 export default Home;

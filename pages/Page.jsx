@@ -13,7 +13,7 @@ import Error404 from './Error404';
 function Pages() {
   return (
     <main role="application">
-      {/* List of animes */}
+      {/* Home search */}
       <Match
         pattern="/"
         exactly
