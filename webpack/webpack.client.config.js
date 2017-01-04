@@ -1,3 +1,7 @@
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const stylusLoader = ExtractTextPlugin.extract('style-loader', 'css-loader!stylus-loader');
+
 module.exports = {
   entry: './source/client.jsx',
   output: {
@@ -26,10 +30,17 @@ module.exports = {
           plugins: ['transform-es2015-modules-commonjs'],
         },
       },
+      {
+        test: /\.styl$/,
+        loader: stylusLoader,
+      },
     ],
   },
   target: 'web',
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.js', '.jsx', '.styl'],
   },
+  plugins: [
+    new ExtractTextPlugin('../statics/styles.css'),
+  ],
 };
