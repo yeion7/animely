@@ -3,8 +3,8 @@ import React from 'react';
 import { renderToString, renderToStaticMarkup } from 'react-dom/server';
 import { ServerRouter, createServerRenderContext } from 'react-router';
 
-import Pages from './pages/containers/Page';
-import Layout from './pages/components/Layout';
+import Pages from '../pages/Page';
+import Layout from '../components/Layout/Layout';
 
 function requestHandler(request, response) {
   const context = createServerRenderContext();

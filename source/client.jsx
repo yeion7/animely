@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router';
 
-import Pages from './pages/containers/Page';
+import Pages from '../pages/Page';
 
 render(
   <BrowserRouter>
