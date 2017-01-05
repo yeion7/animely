@@ -1,12 +1,12 @@
 import React from 'react';
 
-function Characters() {
+function Character() {
   return (
-    <section name="characters">
+    <section name="character">
       <h1>Characters</h1>
     </section>
   );
 }
 
 
-export default Characters;
+export default Character;

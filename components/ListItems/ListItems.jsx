@@ -1,21 +1,18 @@
-import React from 'react';
-
-import Item from '../Item/Item';
+import React, { PropTypes } from 'react';
 
 require('./LisItems.styl');
 
-function ListItems() {
+function ListItems(props) {
+  console.log(props.children);
   return (
     <section className="ListItems">
-      {/* <Item size={'Item-ms'} /> */}
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
+      {props.children}
     </section>
   );
 }
+
+ListItems.propTypes = {
+  children: PropTypes.obj,
+};
 
 export default ListItems;

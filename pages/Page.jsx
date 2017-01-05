@@ -5,8 +5,8 @@ import {
 } from 'react-router';
 
 import Home from './Home';
-import Series from './Series';
-import Characters from './Characters';
+import Serie from './Serie';
+import Character from './Character';
 
 import Error404 from './Error404';
 
@@ -23,13 +23,13 @@ function Pages() {
       <Match
         pattern="/serie/:id"
         exactly
-        component={Series}
+        component={Serie}
       />
       {/* Single character */}
       <Match
         pattern="/characters/:id"
         exactly
-        component={Characters}
+        component={Character}
       />
       {/* Error 404 */}
       <Miss
