@@ -1,6 +1,6 @@
 import React from 'react';
 
-require('./Loader.styl');
+require('./Loading.styl');
 
 function Loader() {
   return (
