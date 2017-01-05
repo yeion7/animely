@@ -1,9 +1,11 @@
 import React from 'react';
 
+import Loader from '../components/Loader/Loader';
+
 function Series() {
   return (
     <section name="Series">
-      <h1>Series</h1>
+      <Loader />
     </section>
   );
 }
