@@ -27,7 +27,7 @@ function Pages() {
       />
       {/* Single character */}
       <Match
-        pattern="/characters/:id"
+        pattern="/character/:id"
         exactly
         component={Character}
       />

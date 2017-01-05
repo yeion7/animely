@@ -1,10 +1,12 @@
 import React, { PropTypes } from 'react';
 
+require('./DataItem.styl');
+
 function DataItem(props) {
   return (
-    <div>
-      <span className="Series-datatype">{props.type}</span>
-      <span className="Series-datatext">{props.text}</span>
+    <div className="DataItem">
+      <span className="DataItem-title">{props.type}</span>
+      <span className="DataItem-text">{props.text}</span>
     </div>
   );
 }
