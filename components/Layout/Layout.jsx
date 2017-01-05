@@ -17,6 +17,7 @@ function Layout(props) {
           href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
           rel="stylesheet"
         />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
         <link
           type="text/css"
           href="http://localhost:3001/styles.css"
