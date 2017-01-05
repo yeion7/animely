@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 require('./Item.styl');
 
-function Item() {
+function Item(props) {
   return (
-    <a className="Item">
+    <a className={`Item ${props.size}`}>
       <div className="Item-container">
         <img
           src="https://cdn.anilist.co/img/dir/anime/reg/21.jpg"
@@ -19,5 +19,9 @@ function Item() {
     </a>
   );
 }
+
+Item.propTypes = {
+  size: PropTypes.string,
+};
 
 export default Item;

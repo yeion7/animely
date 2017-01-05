@@ -7,6 +7,7 @@ require('./LisItems.styl');
 function ListItems() {
   return (
     <section className="ListItems">
+      {/* <Item size={'Item-ms'} /> */}
       <Item />
       <Item />
       <Item />
