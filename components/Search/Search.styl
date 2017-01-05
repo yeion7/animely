@@ -1,22 +1,36 @@
 .Search
   &-form
     display: flex
-    flex-direction: row
+    flex-direction: column-reverse
     justify-content: center
     padding: 10px 0
-    width: 80%
+    width: 90%
+    @media screen and (min-width: 425px)
+      flex-direction: row
+      width: 80%
+
 
   &-select
     font-size: 1.5em
     background: white
     border: 0
-    border-radius: 4px 0 0 4px
     padding: 5px
+    -webkit-appearance:none;
+    @media screen and (min-width: 425px)
+      border-radius: 4px 0 0 4px
+
 
   &-input
     background: white
     border: 0
-    border-radius: 0 4px 4px 0
     flex: 1
     padding: 0 10px
     text-align: center
+    line-height: 3em
+    margin-bottom: 5px
+    border-radius: 0
+
+    @media screen and (min-width: 425px)
+      border-radius: 0 4px 4px 0
+      margin-bottom: 0px
+      line-height: initial

@@ -20,7 +20,7 @@ function Layout(props) {
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
         <link
           type="text/css"
-          href="http://localhost:3001/styles.css"
+          href="http://192.168.0.16:3001/styles.css"
           rel="stylesheet"
         />
       </head>

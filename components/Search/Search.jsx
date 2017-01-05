@@ -14,7 +14,7 @@ function Search() {
         <input
           type="text"
           className="Search-input"
-          placeholder="Search anime or characters and more"
+          placeholder="Search anime and more"
         />
       </form>
     </section>
