@@ -32,6 +32,7 @@ class Home extends React.Component {
         this.setState({
           loading: true,
         });
+        throw new Error('Fail feaching data');
       });
   }
   render() {

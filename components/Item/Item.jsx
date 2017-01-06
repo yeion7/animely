@@ -15,7 +15,12 @@ function Item(props) {
         <div className="Item-content">
           <span className="Item-title">{props.title_english}</span>
           <span className="Item-date">
-            ({props.type}, {props.average_score}%)
+            {props.type && props.average_score &&
+              (`${props.type}, ${props.average_score}%`)
+            }
+            {props.name_first && props.name_last &&
+              (`${props.name_first} ${props.name_last}`)
+            }
           </span>
         </div>
       </div>
