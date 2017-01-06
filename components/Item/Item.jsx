@@ -4,16 +4,18 @@ require('./Item.styl');
 
 function Item(props) {
   return (
-    <a className={`Item ${props.size}`}>
-      <div className="Item-container">
+    <a className="Item" id={props.id}>
+      <div className="Item-container" >
         <img
-          src="https://cdn.anilist.co/img/dir/anime/reg/21.jpg"
-          alt="One Piece"
+          src={props.image_url_lge}
+          alt={props.title_english}
           className="Item-image"
         />
         <div className="Item-content">
-          <span className="Item-title">One Piece</span>
-          <span className="Item-date">(TV, 1999)</span>
+          <span className="Item-title">{props.title_english}</span>
+          <span className="Item-date">
+            ({props.type}, {props.average_score}%)
+          </span>
         </div>
       </div>
     </a>
@@ -21,7 +23,11 @@ function Item(props) {
 }
 
 Item.propTypes = {
-  size: PropTypes.string,
+  image_url_lge: PropTypes.string,
+  title_english: PropTypes.string,
+  type: PropTypes.string,
+  average_score: PropTypes.number,
+  id: PropTypes.number,
 };
 
 export default Item;

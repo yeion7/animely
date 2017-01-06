@@ -1,17 +1,21 @@
 import React, { PropTypes } from 'react';
+import Item from '../Item/Item';
 
 require('./LisItems.styl');
+
 
 function ListItems(props) {
   return (
     <section className="ListItems">
-      {props.children}
+      {props.items && props.items
+        .map(item => <Item key={item.id} {...item} />)
+        }
     </section>
   );
 }
 
 ListItems.propTypes = {
-  children: PropTypes.obj,
+  items: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default ListItems;
