@@ -8,7 +8,7 @@ function ListItems(props) {
   return (
     <section className="ListItems">
       {props.items && props.items
-        .map(item => <Item key={item.id} {...item} />)
+        .map(item => <Item key={item.id} {...item} url={props.url} />)
         }
     </section>
   );
@@ -16,6 +16,7 @@ function ListItems(props) {
 
 ListItems.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object),
+  url: PropTypes.string,
 };
 
 export default ListItems;

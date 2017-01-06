@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 import Item from '../Item/Item';
 import DataItem from '../DataItem/DataItem';
@@ -7,7 +7,6 @@ import ListItems from '../ListItems/ListItems';
 require('./SerieData.styl');
 
 function SerieData(props) {
-
   const date = new Date(props.start_date).toLocaleDateString();
 
   return (
@@ -32,11 +31,24 @@ function SerieData(props) {
         </div>
         <h2 className="SerieData-title">Characters</h2>
         <div className="SerieData-list">
-          <ListItems items={props.characters} />
+          <ListItems items={props.characters} url="character" />
         </div>
       </section>
     </div>
   );
 }
+
+SerieData.propTypes = {
+  characters: PropTypes.arrayOf(PropTypes.object),
+  description: PropTypes.string,
+  airing_status: PropTypes.string,
+  title_japanese: PropTypes.string,
+  type: PropTypes.string,
+  total_episodes: PropTypes.number,
+  duration: PropTypes.number,
+  average_score: PropTypes.number,
+  popularity: PropTypes.number,
+  start_date: PropTypes.string,
+};
 
 export default SerieData;

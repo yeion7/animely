@@ -4,8 +4,12 @@ import { Link } from 'react-router';
 require('./Item.styl');
 
 function Item(props) {
+  const url = props.url === 'character'
+                ? `/character/${props.id}`
+                : `/serie/${props.id}`;
+
   return (
-    <Link className="Item" id={props.id} to={`/serie/${props.id}`}>
+    <Link className="Item" id={props.id} to={url}>
       <div className="Item-container" >
         <img
           src={props.image_url_lge}
@@ -34,6 +38,9 @@ Item.propTypes = {
   type: PropTypes.string,
   average_score: PropTypes.number,
   id: PropTypes.number,
+  url: PropTypes.string,
+  name_first: PropTypes.string,
+  name_last: PropTypes.string,
 };
 
 export default Item;

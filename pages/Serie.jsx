@@ -23,7 +23,6 @@ class Serie extends React.Component {
     const url = `anime/${this.props.params.id}/characters`;
     nani.get(url)
       .then((data) => {
-        console.log(data)
         this.setState({
           data,
           loading: false,
