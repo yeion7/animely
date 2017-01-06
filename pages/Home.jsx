@@ -3,10 +3,9 @@ import nani from 'nani';
 
 import Search from '../components/Search/Search';
 import ListItems from '../components/ListItems/ListItems';
-import Item from '../components/Item/Item';
 import Loading from '../components/Loading/Loading';
 
-const api = nani.init('yeion7-mjuwe', '759gIvnno5QVV1AMMTR')
+const api = nani.init('yeion7-mjuwe', '759gIvnno5QVV1AMMTR');
 
 class Home extends React.Component {
   constructor(props) {
@@ -21,7 +20,7 @@ class Home extends React.Component {
     };
   }
   componentDidMount() {
-    nani.get('browse/anime')
+    api.get('browse/anime')
       .then((data) => {
         this.setState({
           anime: this.state.anime.concat(data),

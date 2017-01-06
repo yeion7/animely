@@ -1,10 +1,11 @@
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 
 require('./Item.styl');
 
 function Item(props) {
   return (
-    <a className="Item" id={props.id}>
+    <Link className="Item" id={props.id} to={`/serie/${props.id}`}>
       <div className="Item-container" >
         <img
           src={props.image_url_lge}
@@ -18,7 +19,7 @@ function Item(props) {
           </span>
         </div>
       </div>
-    </a>
+    </Link>
   );
 }
 
