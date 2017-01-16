@@ -55,7 +55,7 @@ class Serie extends React.Component {
 
 Serie.propTypes = {
   params: PropTypes.shape({
-    id: PropTypes.number,
+    id: PropTypes.string,
   }),
 };
 
