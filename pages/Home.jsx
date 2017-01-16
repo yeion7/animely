@@ -1,4 +1,5 @@
 import React from 'react';
+import { browserHistory } from 'react-router';
 import nani from 'nani';
 
 import Search from '../components/Search/Search';
@@ -30,15 +31,22 @@ class Home extends React.Component {
     this.setState({
       searchText: text,
     });
+    const url = `${window.location.protocol}//
+    ${window.location.host}
+    ${window.location.pathname}`;
+
+    window.history.pushState(url, 'Search', `/${text}`);
   }
 
-  fetchAnime(text) {
-    const search = text ? `anime/search/${text}` : 'browse/anime';
+  fetchAnime() {
+    const search = this.state.searchText
+    ? `anime/search/${this.state.searchText}`
+    : 'browse/anime';
+
     nani.get(search)
       .then((data) => {
         this.setState({
           data,
-          page: this.state.page + 1,
           loading: false,
         });
       })

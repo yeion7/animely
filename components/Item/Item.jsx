@@ -22,8 +22,8 @@ function Item(props) {
             {props.type && props.average_score &&
               (`${props.type}, ${props.average_score}%`)
             }
-            {props.name_first && props.name_last &&
-              (`${props.name_first} ${props.name_last}`)
+            {props.name_first &&
+              (`${props.name_first}`)
             }
           </span>
         </div>
