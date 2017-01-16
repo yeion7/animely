@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import nani from 'nani';
 
 import SerieData from '../components/SerieData/SerieData';
@@ -52,5 +52,11 @@ class Serie extends React.Component {
     );
   }
 }
+
+Serie.propTypes = {
+  params: PropTypes.shape({
+    id: PropTypes.number,
+  }),
+};
 
 export default Serie;
