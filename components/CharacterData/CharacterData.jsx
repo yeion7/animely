@@ -17,9 +17,11 @@ function CharacterData(props) {
       </section>
       <section className="SerieData-content">
         <h2 className="SerieData-title">Description</h2>
-        <div className="SerieData-description">
-          {props.info}
-        </div>
+        <div
+          className="SerieData-description"
+          dangerouslySetInnerHTML={{ __html: props.info }}
+        />
+
       </section>
     </div>
   );
