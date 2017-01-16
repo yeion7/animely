@@ -31,7 +31,16 @@ function SerieData(props) {
         </div>
         <h2 className="SerieData-title">Characters</h2>
         <div className="SerieData-list">
-          <ListItems items={props.characters} url="character" />
+          <ListItems>
+            {props.characters
+                .map(item =>
+                  <Item
+                    key={item.id}
+                    {...item}
+                    url="character"
+                  />,
+                )}
+          </ListItems>
         </div>
       </section>
     </div>

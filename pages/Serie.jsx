@@ -1,7 +1,7 @@
 import React from 'react';
 import nani from 'nani';
 
-import ContentData from '../components/SerieData/SerieData';
+import SerieData from '../components/SerieData/SerieData';
 import Loading from '../components/Loading/Loading';
 
 
@@ -45,13 +45,12 @@ class Serie extends React.Component {
         <div className="Serie-container">
           {this.state.loading
           ? (<Loading />)
-          : (<ContentData {...this.state.data} />)
+          : (<SerieData {...this.state.data} />)
           }
         </div>
       </section>
     );
   }
 }
-
 
 export default Serie;

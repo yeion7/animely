@@ -1,11 +1,12 @@
 import React from 'react';
-import { nani as api } from 'nani';
+import nani from 'nani';
 
 import Search from '../components/Search/Search';
 import ListItems from '../components/ListItems/ListItems';
 import Loading from '../components/Loading/Loading';
+import Item from '../components/Item/Item';
 
-api.init('yeion7-mjuwe', '759gIvnno5QVV1AMMTR');
+nani.init('yeion7-mjuwe', '759gIvnno5QVV1AMMTR');
 
 class Home extends React.Component {
   constructor(props) {
@@ -33,7 +34,7 @@ class Home extends React.Component {
 
   fetchAnime(text) {
     const search = text ? `anime/search/${text}` : 'browse/anime';
-    api.get(search)
+    nani.get(search)
       .then((data) => {
         this.setState({
           data,
@@ -58,7 +59,15 @@ class Home extends React.Component {
           fetch={this.fetchAnime}
         />
         {this.state.loading && (<Loading />)}
-        <ListItems items={this.state.data} />
+        <ListItems>
+          {this.state.data
+              .map(item =>
+                <Item
+                  key={item.id}
+                  {...item}
+                />,
+              )}
+        </ListItems>
       </section>
     );
   }
