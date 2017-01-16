@@ -12,18 +12,21 @@ class Home extends React.Component {
     super(props);
 
     this.state = {
-      anime: [],
-      manga: [],
-      characters: [],
+      searchText: '',
+      data: [],
       page: 1,
       loading: true,
     };
+
+    this.handleUserInput = this.handleUserInput.bind(this);
+    this.fetchSearch = this.fetchSearch.bind(this);
   }
+
   componentDidMount() {
     api.get('browse/anime')
       .then((data) => {
         this.setState({
-          anime: this.state.anime.concat(data),
+          data,
           page: this.state.page + 1,
           loading: false,
         });
@@ -35,12 +38,42 @@ class Home extends React.Component {
         throw new Error('Fail feaching data');
       });
   }
+
+  handleUserInput(text) {
+    this.setState({
+      searchText: text,
+    });
+  }
+
+  fetchSearch() {
+    const text = `anime/search/${this.state.searchText}`;
+    api.get(text)
+      .then((data) => {
+        this.setState({
+          data,
+          page: this.state.page + 1,
+          loading: false,
+        });
+      })
+      .catch(() => {
+        this.setState({
+          loading: true,
+        });
+        throw new Error('Fail feaching data');
+      });
+  }
+
+
   render() {
     return (
       <section name="Home">
-        <Search />
+        <Search
+          onUserInput={this.handleUserInput}
+          text={this.state.searchText}
+          fetch={this.fetchSearch}
+        />
         {this.state.loading && (<Loading />)}
-        <ListItems items={this.state.anime} />
+        <ListItems items={this.state.data} />
       </section>
     );
   }
