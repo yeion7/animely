@@ -1,5 +1,4 @@
 import React from 'react';
-import { browserHistory } from 'react-router';
 import nani from 'nani';
 
 import Search from '../components/Search/Search';

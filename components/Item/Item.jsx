@@ -40,7 +40,6 @@ Item.propTypes = {
   id: PropTypes.number,
   url: PropTypes.string,
   name_first: PropTypes.string,
-  name_last: PropTypes.string,
 };
 
 export default Item;

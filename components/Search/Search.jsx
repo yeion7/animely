@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import debounce from 'debounce';
 
 require('./Search.styl');
@@ -35,4 +35,9 @@ class Search extends React.Component {
   }
 }
 
+Search.propTypes = {
+  text: PropTypes.string,
+  fetch: PropTypes.func,
+  onUserInput: PropTypes.func,
+};
 export default Search;
